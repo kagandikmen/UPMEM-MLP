@@ -105,6 +105,7 @@ int main()
 
     printf("Training complete in %d epochs\n", epoch);
 
+#ifdef DEBUG
     for(int i=0; i<num_layers; i++) {
         LAYER *lp = n->l+i;             // ptr to i-th layer of the network n
         for(int j=0; j<lp->num_neurons; j++) {
@@ -114,6 +115,7 @@ int main()
         }
         printf("\n\n");
     }
+#endif
 
     // memory cleanup before termination
     free_double_matrix(samples, NUM_TRAIN_SAMPLES);
