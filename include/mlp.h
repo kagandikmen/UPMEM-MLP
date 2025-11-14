@@ -14,7 +14,9 @@
 
 #define MOMENTUM 0.8
 
+#ifndef MAX_EPOCH
 #define MAX_EPOCH 30
+#endif
 
 extern unsigned int rseed;
 
