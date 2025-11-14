@@ -28,7 +28,7 @@ NEURON *init_neuron(int num_weights)
     {
         double rand_unit = (double)rand() / (double)RAND_MAX;
         n->w[i] = (rand_unit * 2.0 - 1.0) * limit;
-        n->lw[i] = 0;
+        n->lw[i] = n->w[i];
     }
 
     return n;

@@ -15,7 +15,7 @@ int test_init_layer()
     // printf("%d\n", l->n[2].num_weights);
 
     int test_pass_fail = (l->num_neurons == 3)
-                        && (l->n[0].lw[0] == 0)
+                        && (l->n[0].lw[0] == l->n[0].w[0])
                         && (l->n[1].w[0] >= 0)
                         && (l->n[1].w[0] <= 1)
                         && (l->n[2].num_weights == 4);

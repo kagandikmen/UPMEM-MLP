@@ -9,7 +9,7 @@ int test_init_neuron()
     // printf("%lf\n", n->w[0]);
     // printf("%lf\n", n->lw[0]);
 
-    return (n->num_weights == 2) && (n->w[0] <= 1) && (n->w[0] >= -1) && (n->lw[0] == 0);
+    return (n->num_weights == 2) && (n->w[0] <= 1) && (n->w[0] >= -1) && (n->lw[0] == n->w[0]);
 }
 
 int main()

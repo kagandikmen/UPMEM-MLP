@@ -22,7 +22,7 @@ int test_init_network()
                     && (n->l[1].num_neurons == 5)
                     && (n->l[2].num_neurons == 2)
                     && (n->l[0].n[0].num_weights == 8)
-                    && (n->l[0].n[0].lw[0] == 0.0)
+                    && (n->l[0].n[0].lw[0] == n->l[0].n[0].w[0])
                     && (n->l[1].n[0].num_weights == 8)
                     && (n->l[2].n[0].num_weights == 6);
 
