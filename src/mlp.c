@@ -31,7 +31,7 @@ int main()
         *(samples+i)    = (double *) malloc (sizeof(double)*(NUM_FEATURES+1));
         *(labels+i)     = (double *) malloc (sizeof(double)*NUM_LABELS);
         
-        samples[i][0] = 1.0;   // bias
+        samples[i][0] = 0.0;   // bias
         for(size_t j=1; j<(NUM_FEATURES+1); ++j) {
             samples[i][j] = (sample_data[i][j-1] / 127.5) - 1.0;
         }
