@@ -99,7 +99,7 @@ int main()
         printf("Epoch %d --- loss_delta = %.12lf\n", epoch, loss_delta);
 #endif
 
-        if(loss_delta < EPSILON)
+        if(loss_delta < EPSILON || epoch == MAX_EPOCH)
             break;
     }
 
