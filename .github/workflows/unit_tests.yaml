@@ -18,6 +18,7 @@ jobs:
         run: | 
           sudo apt update && sudo apt install -y build-essential
           sudo bash .github/build_upmem_toolchain.sh
+          which dpu-lldb
 
       - name: Create build directory
         run: |
