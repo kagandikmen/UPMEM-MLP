@@ -17,8 +17,7 @@ jobs:
       - name: Install dependencies
         run: | 
           sudo apt update && sudo apt install -y build-essential
-          cat ./.github/build_upmem_toolchain.sh
-          sudo ./.github/build_upmem_toolchain.sh
+          sudo bash .github/build_upmem_toolchain.sh
 
       - name: Create build directory
         run: |
