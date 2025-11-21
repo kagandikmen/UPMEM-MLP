@@ -16,12 +16,13 @@ jobs:
 
       - name: Install dependencies
         run: | 
-          sudo apt update && sudo apt install -y build-essential python3.10 python3.10 libelf-dev cmake
+          sudo apt update && sudo apt install -y build-essential python3.10 libelf-dev cmake
           sudo bash .github/build_upmem_toolchain.sh
           
       - name: Test Installation
         run: |
           source /usr/local/bin/upmem-2024.2.0-Linux-x86_64/upmem_env.sh
+          ls -l /usr/lib/x86_64-linux-gnu/libpython3.10
           which dpu-lldb
 
       - name: Create build directory
