@@ -25,9 +25,7 @@ jobs:
           which dpu-lldb
 
       - name: Create build directory
-        run: |
-          source /usr/local/bin/upmem-2024.2.0-Linux-x86_64/upmem_env.sh
-          mkdir build
+        run: mkdir build
       
       - name: Run CMake
         working-directory: build
