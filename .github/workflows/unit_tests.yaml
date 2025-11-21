@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     
     steps:
       - name: Checkout repository
@@ -16,7 +16,7 @@ jobs:
 
       - name: Install dependencies
         run: | 
-          sudo apt update && sudo apt install -y build-essential python3 libelf-dev cmake
+          sudo apt update && sudo apt install -y build-essential python3.10 python3.10-dev
           sudo bash .github/build_upmem_toolchain.sh
           
       - name: Test Installation
