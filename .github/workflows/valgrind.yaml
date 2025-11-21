@@ -6,7 +6,7 @@ on:
 
 jobs:
   memcheck:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout repository
@@ -17,21 +17,21 @@ jobs:
       - name: Install dependencies
         run: | 
           sudo apt update
-          sudo apt install -y build-essential valgrind
+          sudo apt install -y build-essential valgrind python3.10 python3.10-dev
           pip3 install numpy
-          sudo ./.github/build_upmem_toolchain.sh
+          sudo bash .github/build_upmem_toolchain.sh
 
       - name: Extract training samples & labels
         run: python3 read_dataset.py
 
       - name: Compile MLP
         run: |
-          source /usr/local/bin/upmem-sdk/upmem_env.sh
+          source /usr/local/bin/upmem-2024.2.0-Linux-x86_64/upmem_env.sh
           make
 
       - name: Run Valgrind
         run: | 
-          source /usr/local/bin/upmem-sdk/upmem_env.sh
+          source /usr/local/bin/upmem-2024.2.0-Linux-x86_64/upmem_env.sh
           valgrind --leak-check=full \
                    --show-leak-kinds=all \
                    --track-origins=yes \

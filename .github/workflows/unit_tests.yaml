@@ -18,11 +18,6 @@ jobs:
         run: | 
           sudo apt update && sudo apt install -y build-essential python3.10 python3.10-dev
           sudo bash .github/build_upmem_toolchain.sh
-          
-      - name: Test Installation
-        run: |
-          source /usr/local/bin/upmem-2024.2.0-Linux-x86_64/upmem_env.sh
-          which dpu-lldb
 
       - name: Create build directory
         run: mkdir build
