@@ -16,7 +16,7 @@ jobs:
 
       - name: Install dependencies
         run: | 
-          sudo apt update && sudo apt install -y build-essential python3 python3-pip libelf-dev cmake
+          sudo apt update && sudo apt install -y build-essential python3.10 python3.10-pip libelf-dev cmake
           sudo bash .github/build_upmem_toolchain.sh
           
       - name: Test Installation
