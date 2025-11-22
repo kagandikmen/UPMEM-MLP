@@ -49,8 +49,10 @@ jobs:
       - name: Compile MLP with sanitizer and UPMEM
         run: |
           source /usr/local/bin/upmem-2024.2.0-Linux-x86_64/upmem_env.sh simulator
+          make clean
           make SAN=1 UPMEM=1
 
       - name: Run with sanitizer
         run: |
+          source /usr/local/bin/upmem-2024.2.0-Linux-x86_64/upmem_env.sh simulator
           ./build/mlp > /dev/null
